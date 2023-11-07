@@ -55,7 +55,7 @@ const Game = () => {
       setFoodDot(generateFoodPosition());
 
       // Aumenta la velocidad del juego (hazlo más rápido)
-      setGameSpeed(gameSpeed - 10); // Puedes ajustar el valor según tu preferencia
+      setGameSpeed(gameSpeed - 5); // Puedes ajustar el valor según tu preferencia
     }
   };
 
