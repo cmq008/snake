@@ -1,0 +1,7 @@
+#! /usr/bin/bash
+
+ECR_REACT_URL="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/snake"
+echo $ECR_REACT_URL
+
+docker tag snake:latest $ECR_REACT_URL:latest
+docker push $ECR_REACT_URL:latest

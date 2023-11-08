@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+  pre_build:
+    commands:
+      - npm install # Instalar las dependencias de Node.js
+  build:
+    commands:
+      - npm run build # Compilar la aplicación React
+artifacts:
+  files:
+    - '**/*' # Incluir todos los archivos en la carpeta de construcción
+
+cache:
+  paths:
+    - node_modules/ # Almacenar en caché las dependencias de Node.js para acelerar compilaciones futuras

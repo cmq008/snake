@@ -1,0 +1,12 @@
+#! /usr/bin/bash
+
+ABS_PATH=$(readlink -f "$0")
+FRONTEND_PATH=$(dirname $ABS_PATH)
+BIN_PATH=$(dirname $FRONTEND_PATH)
+PROJECT_PATH=$(dirname $BIN_PATH)
+REACT_JS_PATH="$PROJECT_PATH/snake"
+
+docker build \
+-t snake \
+-f "$REACT_JS_PATH/Dockerfile" \
+"$REACT_JS_PATH/."
