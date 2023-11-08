@@ -1,7 +1,7 @@
 tasks:
-  - name: npm-init
-    init: npm install && npm run build
-    command: npm run start
+  # - name: npm-init
+  #   init: npm install && npm run build
+  #   command: npm run start
   - name: aws-cli
     env:
       AWS_CLI_AUTO_PROMPT: on-partial
