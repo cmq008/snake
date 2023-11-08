@@ -1,7 +1,7 @@
 {
     "family": "snake",
-    "executionRoleArn": "arn:aws:iam::395691671709:role/CruddurServiceExecutionRole",
-    "taskRoleArn": "arn:aws:iam::395691671709:role/CruddurTaskRole",
+    "executionRoleArn": "arn:aws:iam::395691671709:role/SnakeServiceExecutionRole",
+    "taskRoleArn": "arn:aws:iam::395691671709:role/SnakeTaskRole",
     "networkMode": "awsvpc",
     "cpu": "256",
     "memory": "512",

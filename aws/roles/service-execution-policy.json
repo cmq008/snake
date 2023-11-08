@@ -9,6 +9,7 @@
         "ecr:BatchGetImage",
         "logs:CreateLogStream",
         "logs:PutLogEvents"
-      ]
+      ],
+      "Resource": "*"
     }]
   }

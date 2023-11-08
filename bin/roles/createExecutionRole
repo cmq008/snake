@@ -5,9 +5,15 @@ BACKEND_PATH=$(dirname $ABS_PATH)
 BIN_PATH=$(dirname $BACKEND_PATH)
 PROJECT_PATH=$(dirname $BIN_PATH)
 ROLE_PATH="$PROJECT_PATH/aws/roles/service-assume-role-execution-policy.json"
+EXEC_POLICY_PATH="$PROJECT_PATH/aws/roles/service-execution-policy.json"
 
-echo $ROLE_PATH
+ROLE_NAME="SnakeServiceExecutionRole"
 
 aws iam create-role \
---role-name SnakeServiceExecutionRole \
+--role-name $ROLE_NAME \
 --assume-role-policy-document "file://$ROLE_PATH"
+
+aws iam put-role-policy \
+--policy-name SnakeServiceExecutionPolicy \
+--role-name $ROLE_NAME \
+--policy-document "file://$EXEC_POLICY_PATH"
