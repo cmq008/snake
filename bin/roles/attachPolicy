@@ -1,0 +1,14 @@
+#! /usr/bin/bash
+
+ABS_PATH=$(readlink -f "$0")
+BACKEND_PATH=$(dirname $ABS_PATH)
+BIN_PATH=$(dirname $BACKEND_PATH)
+PROJECT_PATH=$(dirname $BIN_PATH)
+EXEC_POLICY_PATH="$PROJECT_PATH/aws/roles/service-execution-policy.json"
+
+echo $EXEC_POLICY_PATH
+
+aws iam put-role-policy \
+--policy-name SnakeServiceExecutionPolicy \
+--role-name SnakeServiceExecutionRole \
+--policy-document "file://$EXEC_POLICY_PATH"
